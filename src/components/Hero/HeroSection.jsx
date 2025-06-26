@@ -1,8 +1,8 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { ArrowRight, Download } from 'lucide-react'
-import { ParticleBackground } from './particle-background'
-import { AnimatedText } from './animated-text'
+import { ParticleBackground } from '../../ui/particle-background'
+import { AnimatedText } from '../../ui/animated-text'
 
 export default function HeroSection() {
     // Google Drive resume link

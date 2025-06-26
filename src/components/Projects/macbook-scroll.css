@@ -1,0 +1,170 @@
+/* MacBook Scroll Component Styles */
+
+.macbook-pro-screen {
+  aspect-ratio: 16/10;
+  position: relative;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+/* Apply perspective effects to children */
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+
+/* Screen content reflection */
+.screen-reflection {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 30%,
+    rgba(255, 255, 255, 0.1) 40%,
+    rgba(255, 255, 255, 0.2) 49%,
+    rgba(255, 255, 255, 0.1) 50%, 
+    rgba(255, 255, 255, 0) 70%
+  );
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.macbook-pro-screen:hover .screen-reflection {
+  opacity: 0.1;
+}
+
+/* Scroll animation for content */
+@keyframes subtleScroll {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.auto-scroll-content {
+  animation: subtleScroll 15s ease-in-out infinite;
+}
+
+.auto-scroll-content:hover {
+  animation-play-state: paused;
+}
+
+/* Loading Spinner */
+.loading-spinner {
+  width: 24px;
+  height: 24px;
+  border: 3px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  border-top-color: #3498db;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Hide scrollbar for project selector */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .macbook-pro-screen {
+    border-width: 6px;
+  }
+}
+
+@media (max-width: 640px) {
+  .macbook-pro-screen {
+    border-width: 4px;
+  }
+  
+  .loading-spinner {
+    width: 20px;
+    height: 20px;
+    border-width: 2px;
+  }
+}
+
+@media (max-width: 480px) {
+  .macbook-pro-screen {
+    aspect-ratio: 4/3; /* Slightly taller aspect ratio for very small screens */
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) {
+  .screen-reflection {
+    display: none; /* Hide reflections on touch devices */
+  }
+  
+  /* Always show some hint of interactivity on touch devices */
+  .macbook-pro-screen::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.05), transparent);
+    pointer-events: none;
+    z-index: 10;
+  }
+}
+
+/* Subtle animation for button hover on non-touch devices */
+@media (hover: hover) {
+  .project-selector-button:hover {
+    transform: translateY(-1px);
+    transition: transform 0.2s ease;
+  }
+}
+
+/* Pulsing effect for interactive elements */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(99, 102, 241, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(99, 102, 241, 0);
+  }
+}
+
+.pulse-on-load {
+  animation: pulse 2s infinite;
+}
+
+/* Glow effect for active elements */
+.glow-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.glow-effect::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(0.5);
+}
+
+.glow-effect:hover::after {
+  opacity: 1;
+  transform: translate(0, 0) scale(1);
+}

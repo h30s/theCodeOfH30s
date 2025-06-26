@@ -44,7 +44,7 @@ export default function Footer() {
           <div>
             <h2 className="text-2xl font-bold mb-6">h30s<span className="text-gray-400">.dev</span></h2>
             <p className="text-gray-400 mb-6 max-w-xs">
-              Delivering high-quality digital products, meaningful brands, and engaging user experiences.
+              Digital stuff that actually works — and looks 🔥 doing it.
             </p>
             <div className="flex space-x-4">
               {socialLinks.map((social, index) => (
