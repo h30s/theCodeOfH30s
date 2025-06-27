@@ -69,6 +69,4 @@ src/
 - **Portfolio:** [https://thecodeofh30s.vercel.app/](https://thecodeofh30s.vercel.app/)
 
 
-## Credits
-
 Built with ❤️ by **Himanshu Soni — aka h30s**
