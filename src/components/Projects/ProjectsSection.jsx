@@ -19,20 +19,20 @@ export default function ProjectsSection() {
     { 
       title: 'Tunely', 
       description: '🎶 Tunely — Your Room. Your Queue. Your Music Democracy.',
-      image: '', 
-      link: '',
+      image: 'public/tunely.png', 
+      link: 'https://tunely-git-main-h30s.vercel.app/',
       category: 'Web',
       tags: ['React', 'Next.js', 'Tailwind CSS'],
       featured: false
     },
     { 
-      title: 'Working...', 
-      description: 'Something special...', 
-      image: '', 
-      link: '',
+      title: 'Label Ai', 
+      description: 'Label AI - Food Label Analysis App 🏷️', 
+      image: 'public/labelai.png', 
+      link: 'https://labelai-kappa.vercel.app/',
       category: 'Web',
-      tags: ['TbD', 'TbD', 'TbD'],
-      featured: false
+      tags: ['Javascript', 'HTML', 'CSS'],
+      featured: true
     }
   ];
 
